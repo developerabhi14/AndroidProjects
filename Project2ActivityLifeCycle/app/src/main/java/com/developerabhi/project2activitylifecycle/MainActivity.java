@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.e("onRestart", "called");
     }
-    
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
