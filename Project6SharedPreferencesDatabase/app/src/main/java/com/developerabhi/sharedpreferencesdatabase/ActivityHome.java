@@ -64,6 +64,7 @@ public class ActivityHome extends AppCompatActivity {
                         DatabaseHelper db=new DatabaseHelper(ActivityHome.this);
                         db.insertData(dm);
                         dialog.dismiss();
+                        onStart();
                     }
                 });
                 cancel.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +86,5 @@ public class ActivityHome extends AppCompatActivity {
         int count=dm.size();
         totalStudents.setText("Total Students = "+count);
         lv.setAdapter(new CustomAdapter(ActivityHome.this,dm));
-
-
     }
 }

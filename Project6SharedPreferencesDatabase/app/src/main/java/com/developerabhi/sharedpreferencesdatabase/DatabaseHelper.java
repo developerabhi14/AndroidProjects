@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -52,5 +53,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         return data;
+    }
+
+    public void updateData(DataModel dataModel) {
+        Log.e("datamodel", dataModel.getId()+dataModel.getName()+dataModel.getAddress()+dataModel.getFaculty());
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues cv=new ContentValues();
+        cv.put("name",dataModel.getName());
+        cv.put("address",dataModel.getAddress());
+        cv.put("faculty", dataModel.getFaculty());
+        db.update("student", cv, "id=?", new String[]{String.valueOf(dataModel.getId())});
+    }
+
+    public void deleteData(int id) {
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.delete("student","id=?",new String[]{String.valueOf(id)});
     }
 }
