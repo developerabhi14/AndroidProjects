@@ -48,16 +48,20 @@ public class CustomAdapter extends BaseAdapter {
         address.setText(dm.get(position).getAddress());
         faculty.setText(dm.get(position).getFaculty());
 
-
+        // setting long click on our view represented by convertview
         convertView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                //alertdialog builder object
                 AlertDialog.Builder builder = new AlertDialog.Builder(c);
+                //layout for alertdialog
                 View view = LayoutInflater.from(c).inflate(R.layout.update_data, null);
                 builder.setView(view);
+                //alertdialog creation from builder
                 AlertDialog dialog = builder.create();
                 dialog.show();
 
+                //layout elements
                 EditText name = view.findViewById(R.id.name);
                 EditText address = view.findViewById(R.id.address);
                 EditText faculty = view.findViewById(R.id.faculty);
@@ -65,10 +69,12 @@ public class CustomAdapter extends BaseAdapter {
                 Button update = view.findViewById(R.id.btnUpdate);
                 Button delete = view.findViewById(R.id.btnDelete);
 
+                //setting respective values in alertdialog layout from respective views
                 name.setText(dm.get(position).getName());
                 address.setText(dm.get(position).getAddress());
                 faculty.setText(dm.get(position).getFaculty());
 
+                //update button click
                 update.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -86,6 +92,7 @@ public class CustomAdapter extends BaseAdapter {
                         dialog.dismiss();
                     }
                 });
+                //delete button click
                 delete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

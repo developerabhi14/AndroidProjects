@@ -56,7 +56,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateData(DataModel dataModel) {
-        Log.e("datamodel", dataModel.getId()+dataModel.getName()+dataModel.getAddress()+dataModel.getFaculty());
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues cv=new ContentValues();
         cv.put("name",dataModel.getName());
