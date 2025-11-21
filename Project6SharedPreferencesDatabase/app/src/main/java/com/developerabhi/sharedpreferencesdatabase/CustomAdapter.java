@@ -79,6 +79,10 @@ public class CustomAdapter extends BaseAdapter {
                         model.setAddress(address.getText().toString());
                         model.setFaculty(faculty.getText().toString());
                         db.updateData(model);
+
+                        dm.set(position, model);
+                        notifyDataSetChanged();
+                        ((ActivityHome)c).totalStudents.setText("Total Students ="+dm.size());
                         dialog.dismiss();
                     }
                 });
@@ -87,6 +91,9 @@ public class CustomAdapter extends BaseAdapter {
                     public void onClick(View v) {
                         DatabaseHelper db = new DatabaseHelper(c);
                         db.deleteData(dm.get(position).getId());
+                        dm.remove(position);
+                        notifyDataSetChanged();
+                        ((ActivityHome)c).totalStudents.setText("Total Students ="+dm.size());
                         dialog.dismiss();
                     }
                 });
