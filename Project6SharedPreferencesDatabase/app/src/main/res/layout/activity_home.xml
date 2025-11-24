@@ -2,16 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     android:orientation="vertical">
+
+    <!--for adding toolbar in android-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#4A56C3" />
+
+    <!--toolbar end-->
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="New Summit College"
         android:textSize="20dp"
         android:textStyle="bold" />
+
 
     <ImageView
 
@@ -37,8 +49,8 @@
         android:text="Add Data" />
 
     <ListView
+        android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lv"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
