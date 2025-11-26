@@ -29,6 +29,7 @@ public class ActivityHome extends AppCompatActivity {
     TextView totalStudents;
     Button addData;
     ListView lv;
+    //toolbar object
     Toolbar tb;
 
     @Override
@@ -39,11 +40,9 @@ public class ActivityHome extends AppCompatActivity {
         totalStudents = findViewById(R.id.totalStudents);
         addData = findViewById(R.id.addData);
         lv = findViewById(R.id.lv);
-
+        //initialization and making toolbar editable and setting a title
         tb = findViewById(R.id.toolbar);
-
         setSupportActionBar(tb);
-
         getSupportActionBar().setTitle("abc");
 
         addData.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +99,6 @@ public class ActivityHome extends AppCompatActivity {
         totalStudents.setText("Total Students = " + count);
         lv.setAdapter(new CustomAdapter(ActivityHome.this, dm));
     }
-
     //menu layout inflate
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -108,7 +106,7 @@ public class ActivityHome extends AppCompatActivity {
         return true;
     }
 
-    //setting clicks and writing lgout logic
+    //setting clicks and writing logout logic
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
