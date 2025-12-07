@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NavigationView</string>
+    <string name="open">Openhafs</string>
+    <string name="close">Closeashghas</string>
+</resources>
