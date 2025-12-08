@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/home"
-        android:title="Home" />
-    <item
-        android:id="@+id/aboutus"
-        android:title="About us" />
-    <item
-        android:id="@+id/contactus"
-        android:title="Contact us" />
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:icon="@drawable/icon"
+            />
+        <item
+            android:id="@+id/aboutus"
+            android:title="About us" />
+    </group>
+
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/contactus"
+            android:title="Contact us" />
+        <item
+            android:id="@+id/settings"
+            android:title="Settings" />
+    </group>
 </menu>

@@ -13,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -39,15 +40,16 @@ public class MainActivity extends AppCompatActivity {
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
                 if (menuItem.getItemId() == R.id.home) {
-                    //fragmenttransaction object
-                    //object.replace()
-                    //object.commit()
-
+                    ft.replace(R.id.container, new HomeFragment());
+                    ft.commit();
                 } else if (menuItem.getItemId() == R.id.aboutus) {
-
+//                    ft.replace(R.id.container, new AboutUsFragment());
+//                    ft.commit();
                 } else {
-
+//                    ft.replace(R.id.container, new ContactFragment());
+//                    ft.commit();
                 }
                 drawerLayout.closeDrawers();
                 return true;
