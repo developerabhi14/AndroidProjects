@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
                         dm.setVersion(obj1.getDouble("version"));
                         data.add(dm);
                     }
-                rv.setAdapter(new CustomAdapter(getActivity(), data));
+//                rv.setAdapter(new CustomAdapter(getActivity(), data));
                 } catch (Exception e) {
                     Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_SHORT).show();
                 }

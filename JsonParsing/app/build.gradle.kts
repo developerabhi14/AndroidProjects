@@ -3,16 +3,16 @@ plugins {
 }
 
 android {
-    namespace = "com.developerabhi.navigationview"
+    namespace = "com.developerabhi.jsonparsing"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.developerabhi.navigationview"
+        applicationId = "com.developerabhi.jsonparsing"
         minSdk = 24
         targetSdk = 36
-        versionCode = 2
+        versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -41,5 +41,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("com.android.volley:volley:1.2.1")
+    implementation ("com.android.volley:volley:1.2.1")
 }
